@@ -1,0 +1,10 @@
+{
+  "name": "test-deploy-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'backend build ok'",
+    "start": "node server.js",
+    "migration:run": "echo 'no migrations'"
+  },
+  "dependencies": {}
+}

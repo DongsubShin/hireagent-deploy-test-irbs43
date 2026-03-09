@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HireAgent Deploy Test</title>
+  <style>
+    body { font-family: system-ui; max-width: 600px; margin: 80px auto; text-align: center; }
+    .status { padding: 12px 24px; border-radius: 8px; background: #10b981; color: white; display: inline-block; }
+    pre { background: #f1f5f9; padding: 16px; border-radius: 8px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>HireAgent Deploy Test</h1>
+  <div class="status">Deployed Successfully</div>
+  <p>Railway + GitHub integration is working.</p>
+  <pre id="health">Loading health check...</pre>
+  <script>
+    fetch('/api/health').then(r => r.json()).then(d => {
+      document.getElementById('health').textContent = JSON.stringify(d, null, 2);
+    }).catch(e => {
+      document.getElementById('health').textContent = 'Health check failed: ' + e.message;
+    });
+  </script>
+</body>
+</html>

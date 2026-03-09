@@ -1,0 +1,11 @@
+{
+  "providers": [
+    "node"
+  ],
+  "buildPhase": {
+    "cmds": [
+      "mkdir -p backend/dist/public",
+      "cp frontend/index.html backend/dist/public/index.html"
+    ]
+  }
+}
